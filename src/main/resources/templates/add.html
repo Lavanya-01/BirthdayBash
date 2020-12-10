@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+   
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+* {box-sizing: border-box}
+body {
+
+font-family: Verdana, sans-serif; 
+margin:0;
+background-color: #ffc7ea;
+background-image: url(../img/b8.jpg);
+background-size: 100%;
+
+}
+
+.container{
+  width:70%;
+  max-height: 400px !important;
+}
+
+
+
+.carousel-inner{
+  width:100%;
+  max-height: 600px !important;
+}
+
+form {
+position:relative;
+width:305px;
+margin:15px auto 0 auto;
+text-align:center;
+display:block;
+    padding-top: 15px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Write your wishes</a>
+    </div>
+   
+   
+  </div>
+</nav>
+  
+ <section>
+ 
+      <div class="container">
+         <div class="row">
+               <div class="my-card mt-2">
+             
+                  <form style="border:black; border-width:5px; border-style:outset;" action="" th:action="@{/do_add}" method="post" th:object="${user}">
+                  
+                  <!-- User name field -->
+                  
+                  <div class="form-group">
+                      <label for="name_feild">Your Name</label>
+                      <input 
+                         name="name"
+                         type="text" 
+                         class="form-control" 
+                         id="name_feild" 
+                         aria-describedby="emailHelp" 
+                         placeholder="Enter your name"
+                         required
+                         th:value="${user.name}"
+                         /> 
+                    
+                   
+             </div>
+      
+         <!-- About field -->
+                  <label for="name_feild">Add your wishes</label>
+                  <div class="form-group">
+                      <textarea maxlength="250"  name="about"  th:text="${user.about}"   placeholder="Enter short wishes approx 30 words" rows="7" class="form-control"></textarea>
+                   
+        </div>
+        
+         <!-- About field -->
+                  <label for="name_feild">Another wish</label>
+                  <div class="form-group">
+                      <textarea maxlength="250"  name="wishes"  th:text="${user.wishes}"   placeholder="Want to wtite more... Go ahead" rows="7" class="form-control"></textarea>
+                   
+        </div>
+     
+        <div class="container text-center">
+        
+         <button type = "submit"   class= "btn bg-primary text-white" onclick="alert('Your wishes got saved to the list')">Save Wishes</button>
+        
+                  
+                </div>  
+                  </form>
+               
+               </div>
+            
+              
+            
+            </div>
+         
+         
+         </div>
+      
+      </div>
+
+   </section>
+
+
+
+</body>
+</html> 

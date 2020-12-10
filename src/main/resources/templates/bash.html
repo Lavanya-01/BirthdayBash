@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+
+* {box-sizing: border-box}
+body {
+
+font-family: Verdana, sans-serif; 
+margin:0;
+background-color: #ffc7ea;
+}
+
+.p1{
+   font-family:   Lucida Handwriting;
+   font-weight: 900;
+   
+}
+
+.p2{
+   font-style: oblique;
+   margin-left: inherit;
+   font-weight: normal;
+   font-variant: small-caps;
+   text-align: justify;
+   
+}
+
+.div1{
+border-bottom: 6px solid red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 100px;
+  margin-left: 80px;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  
+
+}
+
+</style>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome Birthday girl</a>
+    </div>
+  </div>
+</nav>
+
+       
+
+
+
+    <div class="col align-self-center div1"  th:each="book : ${bash}" >
+     <h1 class ="text-uppercase  text-center p1" style="font-size:3.875em;" ><span th:text="${book.name}"></span></h1>
+            <p class =" p2" style="font-size:1.875em;"><span th:text="${book.about}"></span></p>
+            <p class =" p2" style="font-size:1.875em;"><span th:text="${book.wishes}"></span></p>
+            
+            <br><br><br><br>
+    </div>
+    
+ 
+
+
+</body>
+</html> 
